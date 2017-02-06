@@ -1,0 +1,239 @@
+body, div, p, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    font-family: 宋体, 微软雅黑;
+    color: #666666;
+}
+
+a {
+    text-decoration: none;
+    color: #666666;
+}
+
+a:hover {
+    color: darkred;
+}
+
+input, image {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline-style: none;
+}
+
+i, s, u {
+    font-style: normal;
+    text-decoration: none;
+}
+
+
+.clearfix:after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.w {
+    margin: 0 auto;
+    width: 1200px;
+}
+.star{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50% ;
+    pointer-events:none
+}
+
+
+.header {
+    position: relative;
+    z-index: 99;
+    /*left: 75px;*/
+    height: 100px;
+    margin:0 auto;
+    margin-top: 40px;
+}
+.top {
+    position: absolute;
+    background: rgba(255,255,255,.7);
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.header-left {
+    float: left;
+    margin-left: 60px;
+    opacity: 1;
+}
+
+.header-left a {
+    margin-top: 17px;
+    display: block;
+    text-indent: -9999px;
+    background: url("../images/logo.png");
+    width: 162px;
+    height: 68px;
+}
+
+.header-right {
+    float: left;
+    margin-left: 50px;
+}
+
+.header-right ul li {
+    float: left;
+    line-height: 100px;
+    height: 1px;
+    width: 131px;
+}
+
+.header-right ul li a {
+    font-size: 18px;
+    color: #383B4A;
+    font-family: 微软雅黑;
+}
+
+.header-right ul span {
+    display: none;
+}
+.header-right ul dl{
+    display: none;
+    background: rgba(255,255,255,.7);
+}
+.header-right ul dl dd{
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.header-right dl dd a{
+    color: #666666;
+    font-size: 14px;
+}
+
+.fixed{
+    position: fixed;
+    /*left: 75px;*/
+    top: -40px;
+    z-index: 100;
+}
+.footer-top{
+    margin-top: 40px;
+    height: 170px;
+    width: 100%;
+    background-color: #444656;
+}
+.footer-bot{
+    height: 240px;
+    width: 1199px;
+    background-color: #2D303F;
+    padding-left: 150px;
+    padding-top: 50px;
+}
+.footer-top .f-left{
+    margin-left: 120px;
+    padding-top: 40px;
+}
+.footer-top .f-left li{
+    float: left;
+    margin-right: 50px;
+}
+.footer-top .li1 h2{
+    /*margin-left: 30px;*/
+    font-size: 25px;
+    font-weight: 900;
+    color: yellow;
+}
+.footer-top .li1 span{
+    /*margin-left: 30px;*/
+    font-size: 27px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.footer-top .li1 p{
+    /*margin-left: 30px;*/
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.footer-top .li2{
+    margin-right: 20px !important;
+}
+.footer-top .li2 img{
+    float: left;
+    margin-right: 10px;
+}
+.footer-top .li2 p{
+    color: #ffffff;
+    width: 300px;
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    /*margin-left: 5px;*/
+}
+.footer-top .li2 span{
+    color: yellow;
+    font-size:18px;
+}
+.footer-bot dl{
+    float: left;
+    padding-left: 22px;
+    text-align: right;
+    margin-right: 70px;
+    height: 240px;
+    background: url("../images/fbbg.png") no-repeat;
+}
+.footer-bot .redu{
+    background:url("");
+    padding: 0;
+}
+.footer-bot dt{
+    background-color: #444656;
+    margin-bottom: 16px;
+    width: 140px;
+}
+.footer-bot dt a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.footer-bot dd {
+    margin-right: 10px;
+    text-transform: uppercase;
+    padding: 0 0 9px 0;
+}
+.footer-bot dd a{
+    font-size: 12px;
+    color: #fff;
+    font-family: Verdana, 宋体;
+}
+.footer-last{
+    background-color: #232633;
+    height: 100px;
+    padding-left: 150px;
+    padding-top: 20px;
+}
+.footer-last p{
+    /*margin-top: 20px;*/
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+}
+.footer-last p span{
+    color: #415b50;
+}
+body {
+    background-color: #F8F8F8;
+    /*height: 10000px;*/
+    /*width: 2000px;*/
+}
