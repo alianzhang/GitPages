@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>canvas中动态饼图的生成并添加文字</title>
+        <style>
+        canvas{
+        	border: 1px solid #000;
+        	background-color: #f6f6f6;
+        	display: block;
+        	margin: 0 auto;
+        }
+        #btn{
+        	display: block;
+        	margin: 0 auto;
+        }
+
+        </style>
+        <script src="index.js"></script>
+    </head>
+    <body>
+    <!-- 创建一个画布 -->
+    <canvas width='550' height='550' id='c1'></canvas>
+    <button id="btn">点击变色</button>
+    <!-- 点击按钮事件 -->
+    <script>
+    var btn=document.getElementById('btn');
+    btn.onclick=function(){location.reload()}
+    </script>
+    <!-- 绘制饼图部分代码在JS文件中 -->
+    </body>
+</html>
