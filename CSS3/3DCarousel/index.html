@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		.box{
+			width: 560px;
+			height: 380px;
+			border: 1px solid #000;
+			margin: 100px auto 0;
+			display: flex;
+		}
+
+		ul{
+			flex: 1;
+			transform-style: preserve-3d;
+			transition: all 1s;
+		}
+		li{
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top:0;
+			overflow: hidden;
+		}
+		li:nth-child(1){
+			transform: translateZ(190px);
+		}
+		li:nth-child(2){
+			transform: rotateX(-180deg) translateZ(190px);
+		}
+		li:nth-child(3){
+			transform: rotateX(90deg) translateZ(190px);
+		}
+		li:nth-child(4){
+			transform: rotateX(-90deg) translateZ(190px);
+		}
+
+		ul:nth-child(2) img{
+			margin-left: -140px;
+		}
+		ul:nth-child(3) img{
+			margin-left: -280px;
+		}
+		ul:nth-child(4) img{
+			margin-left: -420px;
+		}
+
+		.wrap{
+			width: 660px;
+			height: 30px;
+			/*background-color: red;*/
+			margin: 0 auto;
+			top: -190px;
+			position: relative;
+		}
+		.btn{
+			position: absolute;
+			display: block;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			font-size: 30px;
+			line-height: 30px;
+		}
+		.left_btn{
+			left: 0px;
+		}
+
+		.right_btn{
+			right: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="items">
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+		<ul class="items">
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+		<ul class="items">
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+		<ul class="items">
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+	</div>
+	<div class="wrap">
+		<a class="btn left_btn" href="javascript:;"> << </a>
+		<a class="btn right_btn" href="javascript:;"> >> </a>
+	</div>
+
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+
+	<script>
+	$(function(){
+		var total=0;
+		var leftBtn=$(".left_btn");
+		var rightBtn=$(".right_btn");
+		var items=$(".items");
+
+		// 通过定时器是实现延迟执行css转变
+//		rightBtn.click(function(){
+//				total+=90;
+//				flag=false;
+//				items.each(function(index,el){
+//					setTimeout(function(){
+//						items.eq(index).css('transform','rotateX('+total+'deg)');
+//					}, index*200);
+//				})
+//		})
+
+//通过过渡的延迟属性去实现延迟执行过渡，并添加对暴力点击的控制
+		var flag=true;
+	    rightBtn.click(function(){
+			if(flag){
+				total+=90;
+				flag=false;
+				items.each(function(index,el){
+					items.eq(index).css({
+						'transform':'rotateX('+total+'deg)',
+						'transition':'all 1s '+index*200+'ms'
+					});
+				})
+			}
+		})
+
+		leftBtn.click(function(){
+			if(flag){
+				total-=90;
+				flag=false;
+				items.each(function(index,el){
+					items.eq(index).css({
+						'transform':'rotateX('+total+'deg)',
+						'transition':'all 1s '+index*200+'ms'
+					});
+				})
+			}
+		})
+		items.last().on('transitionend',function (argument) {
+			flag = true;
+		})
+//
+	})
+	</script>
+
+
+
+
+<!--没有加flax的转动效果JS-->
+	<!--<script>-->
+		<!--$(function(){-->
+			<!--var total=0;-->
+			<!--var leftBtn=$(".left_btn");-->
+			<!--var rightBtn=$(".right_btn");-->
+			<!--var items=$(".items");-->
+			<!--rightBtn.click(function(){-->
+				<!--total+=90;-->
+				<!--items.css("transform","translate(-50%,-50%) rotateX("+total+"deg)");-->
+			<!--})-->
+			<!--leftBtn.click(function(){-->
+				<!--total-=90;-->
+				<!--items.css("transform","translate(-50%,-50%) rotateX("+total+"deg)");-->
+			<!--})-->
+		<!--})-->
+	<!--</script>-->
+</body>
+</html>
